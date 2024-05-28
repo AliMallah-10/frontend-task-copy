@@ -19,7 +19,7 @@
 - git add .
 - git commit -m "Finish Task"
 - git branch -M main
-- git remote add origin https://github.com/AliMallah-10/task-front.git
+- git remote add origin https://github.com/AliMallah-10/frontend-task-copy.git
 - git push -u origin master
 
 <!-- deploy -->
