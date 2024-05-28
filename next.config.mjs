@@ -8,7 +8,7 @@ const nextConfig = {
   images: {
     domains: ["res.cloudinary.com"],
   },
-  // Specify the src directory
+  // Specify src directory
   srcDir: "src",
 };
 
