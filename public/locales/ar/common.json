@@ -1,0 +1,14 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "text": "All rights reserved."
+  },
+  "language": {
+    "arabic": "Arabic",
+    "english": "English"
+  }
+}

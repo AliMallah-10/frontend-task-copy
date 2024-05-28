@@ -1,0 +1,132 @@
+{
+  "Navbar": ["Home", "Series", "TV Shows", "Documentaries", "Kids"],
+  "Profile": {
+    "favorties": "My Favorites",
+    "Info": "Account Info",
+    "Logout": "Logout"
+  },
+  "SectionTitle": {
+    "WebMainslider": "1001 Originls - available Now!",
+    "MostWatched": "Most Watched",
+    "Romance": "Romance",
+    "Classic": "Classic Drama",
+    "Kids": "Kids",
+    "Original": "1001 Original shows"
+  },
+  "SearchBar": {
+    "placeholder": "Search...",
+    "MostSearched": "Most Searched"
+  },
+  "Buttons": {
+    "back": "back",
+    "Subscribe": "Subscribe Now",
+    "favorties": "Add to favorties",
+    "Login": "Login",
+    "Browse": "Browse all"
+  },
+
+  "WebMainslider": {
+    "أبجد هوس": {
+      "name": "Abgad Hawas",
+      "genres": ["Comedy"]
+    },
+    "روح": {
+      "name": "Rooh",
+      "genres": ["Social", "Drama"]
+    },
+    "العائلة X": {
+      "name": "Family X",
+      "genres": ["Mystery", "Social"]
+    },
+    "ولاية بطيخ": {
+      "name": "State of Melon",
+      "genres": ["Comedy"]
+    },
+    "مراجيح": {
+      "name": "Swings",
+      "genres": ["Entertainment"]
+    }
+  },
+
+  "Footer": [
+    "Home",
+    "Contact us",
+    "Privacy",
+    "Terms and Conditions",
+    "All Rights Reserved"
+  ],
+  "OrginalSection": {
+    "روح": {
+      "name": "Rouh",
+      "description": "Grandfather Younis tries to heal the family's wounds after their daughter, who has Down syndrome, is involved in a tragic accident that turns their lives upside down.",
+      "genres": ["Social", "Drama"],
+      "directors": ["Hassan Hassani"]
+    },
+    "العائلة X": {
+      "name": "Family X",
+      "description": "A widow in her forties searches for her missing teenage son, uncovering his secrets and his own world.",
+      "genres": ["Mystery", "Social"],
+      "directors": ["Ali Fadel"]
+    },
+    "اقتحام": {
+      "name": "Intrusion",
+      "description": "The doors are closed to Zahra, so she and her father decide to rob a bank to secure treatment for her sick daughter. She finds herself trapped while holding hostages, uncovering intertwined threads of crimes and mafia controlling money and destinies.",
+      "genres": ["Thriller", "Mystery", "Police"],
+      "directors": ["Muhannad Abu Khumra"]
+    },
+    "عشتار": {
+      "name": "Ashitar",
+      "description": "Between life's first blows and success... the journey of a wrestling champion in revealing the secrets of darkness and overcoming challenges.",
+      "genres": ["Biography", "Documentary"],
+      "directors": ["Luay Sahi"]
+    },
+    "ولاية بطيخ": {
+      "name": "Watermelon Province",
+      "description": "A new season of the comedy program \"Watermelon Province\" addresses Iraqi social and economic issues.",
+      "genres": ["Comedy"],
+      "directors": ["Ali Fadel"]
+    },
+    "أبجد هوس": {
+      "name": "Abgad Hawas",
+      "description": "A group of seniors decides to join a literacy school to learn reading and writing, leading to exciting comic situations.",
+      "genres": ["Comedy"],
+      "directors": ["Amjad Zankna"]
+    },
+    "بطولة 1001 فيفا 2023 في العراق": {
+      "name": "1001 FIFA Championship 2023 in Iraq",
+      "description": "A battle for the title between 16 contestants who reached the final rounds out of 512 participants in electronic sports competitions. Fierce matches, accompanied by a commentator who narrates their details, followed by an analytical studio, as if you were watching real matches broadcast live.",
+      "genres": ["Esports"],
+      "directors": ["73 Productions"]
+    },
+    "مراجيح": {
+      "name": "Swings",
+      "description": "Swings",
+      "genres": ["Entertainment"],
+      "directors": ["Yasser Sami"]
+    },
+    "محتوى خابط": {
+      "name": "Nonsense Content",
+      "description": "Assorted scenes mixing comedy with drama and different stories in each episode revolving around family and married life.",
+      "genres": ["Comedy", "Social"],
+      "directors": ["Samer Hakam"]
+    },
+    "الخوات": {
+      "name": "The Sisters",
+      "description": "After more than twenty years, the daughters of Younis Fayyad gather to attend his condolence council, but something prompts them to stay, forcing them to choose between parting again or facing destiny.",
+      "genres": ["Social"],
+      "directors": ["Amjad Zankna"]
+    },
+    "مجنون سارة": {
+      "name": "Crazy Sarah",
+      "description": "Love at first sight leads Saif to fall in love with Sarah when she joins him at work in an advertising company. The security they feel quickly swept away by the tide of hatred and malice after they declare their feelings. Who seeks to destroy their relationship, and where will the chapters of their story end?",
+      "genres": ["Romance"],
+      "directors": ["Muhannad Abu Khumra"]
+    },
+    "خارج التغطية M&M": {
+      "name": "Out of Coverage M&M",
+      "description": "Millions and her daughter Maha explore unique tourist destinations and rare landmarks, mingling with the inhabitants of those destinations to learn about their customs and traditions. Trips full of challenge and adventure, enhanced with a description of each trip's details.",
+      "genres": ["Travel"],
+      "directors": ["Ammar Saad"]
+    }
+  }
+}

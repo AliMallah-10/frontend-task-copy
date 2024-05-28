@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  scrollbar-width: thin;
+  -webkit-font-smoothing: antialiased;
+  scrollbar-color: var(--primary) hsla(0, 0%, 100%, 0.1);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+:root {
+  --dark-blue-primary: #010028;
+  --backgroud-primary: #010101;
+  --text-primary: #f2f2f2;
+  --inline-padding: 35px;
+  --primary: #12be12;
+  --hover_primary: #42ff00;
+  --secondary: #0a0a1e;
+  --white: #fff;
+  --gray: #b3b3b3;
+  --error: #f2084b;
+  --error_bg: rgba(255, 0, 0, 0.04);
+  --success: #12be12;
+  --success_bg: rgba(37, 215, 78, 0.04);
+  --link: #0071eb;
+  --image-height: 9rem;
+}
+
+@media (max-width: 768px) {
+  .switchGroup {
+    bottom: -14%;
+    right: 17%;
+    width: 65%;
+    height: 18%;
+    padding: 8px;
+  }
+  .AvailSection {
+    padding-top: 20%;
+  }
+  .SearchInput {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+  .buttonMenu {
+    display: block;
+  }
+  .mobileLinks {
+    display: none;
+  }
+  .mobileDropdown {
+    display: none;
+    width: 100%;
+  }
+  .dotsDiv {
+    display: flex;
+  }
+}
+@media (max-width: 426px) {
+  .SearchInput {
+    padding: 2px;
+  }
+  .btnSub {
+    padding: 0.2rem 0.8rem;
+    font-size: 13px;
+  }
+  .btnADD {
+    padding: 0.2rem 0.5rem;
+    font-size: 13px;
+  }
+  .switchGroup {
+    bottom: -18%;
+    right: 0%;
+    display: flex !important;
+    width: 98% !important;
+    height: 20% !important;
+    padding: 4px;
+  }
+  .AvailSection {
+    padding-top: 40%;
+  }
+  .orginaDEV {
+    display: flex;
+    flex-direction: column;
+  }
+  .button-top {
+    display: none;
+  }
+  .button-bot {
+    display: block;
+    z-index: 999;
+  }
+  .orginalSwiper {
+    width: 100%;
+  }
+  .ulfooter {
+    display: flex;
+    flex-direction: column;
+  }
+  .soicalH {
+    display: none;
+  }
+  .soicalA {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer {
+    padding-top: 1rem;
+  }
+}
+@media (max-width: 375px) {
+  .SearchInput {
+    padding: 2px 5px;
+  }
+  .btnADD {
+    padding: 0.2rem 0.5rem;
+    font-size: 10px;
+  }
+  .switchGroup {
+    bottom: -15%;
+    right: 1%;
+    display: flex !important;
+    width: 98% !important;
+    height: 18% !important;
+    padding: 4px;
+  }
+}
+
+.swiper-container {
+  overflow: visible !important; /* Ensure overflow is visible */
+}
+.SwiperSlide{
+  /* z-index: 999 !important; */
+  box-sizing: border-box;
+}
+/* .DivCardScale {
+  @apply absolute w-full bottom-0 left-0 right-0  rounded-b-md transition-all duration-700 ease-in-out opacity-0 max-h-0 group-hover:max-h-full border-2 border-transparent  group-hover:border-x-primary  group-hover:border-b-primary group-hover:opacity-100 group-hover:-bottom-[32%];
+ 
+} */
+.DivCardScale {
+  @apply absolute left-0 right-0 rounded-b-md transition-all duration-700 ease-in-out opacity-0 max-h-0 group-hover:max-h-full group-hover:opacity-100 border-2 border-transparent  group-hover:border-x-primary  group-hover:border-b-primary overflow-hidden;
+  top: var(--image-height); /* Use CSS variable to set top position */
+}
+
+nav {
+  background: linear-gradient(to bottom, #000000, transparent);
+  transition: background 0.3s ease-in-out;
+}
+
+nav .scrolled {
+  background: #000000;
+}
