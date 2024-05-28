@@ -1,3 +1,12 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/src/app/$1" }]
+  "rewrites": [
+    {
+      "source": "/locale/(.*)",
+      "destination": "/src/app/locale/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/src/app/$1"
+    }
+  ]
 }
