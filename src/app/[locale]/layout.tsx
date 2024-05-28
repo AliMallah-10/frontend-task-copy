@@ -28,7 +28,7 @@ export default async function RootLayout({
   const direction = getLangDir(locale);
 
   return (
-    <html lang={locales} dir={direction}  >
+    <html lang={locales} dir={direction}>
       <body
         className={`${inter.className} bg-[#010028] text-[#f2f2f2] text-lg  overflow-x-hidden`}
       >

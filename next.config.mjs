@@ -1,4 +1,5 @@
-// export default nextConfig;
+
+
 import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin();
@@ -10,6 +11,7 @@ const nextConfig = {
   },
   // Specify src directory
   srcDir: "src",
+
 };
 
 export default withNextIntl(nextConfig);

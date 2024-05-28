@@ -15,6 +15,7 @@
 - npm install embla-carousel-react
 
 <!-- gitHub -->
+
 - git init
 - git add .
 - git commit -m "Finish Task"
@@ -23,4 +24,12 @@
 - git push -u origin master
 
 <!-- deploy -->
+
 - npm run build
+
+{
+"rewrites": [
+{ "source": "/locale/(.*)", "destination": "/src/app/locale/$1" },
+{ "source": "/(.*)", "destination": "/src/app/$1" }
+]
+}
