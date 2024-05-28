@@ -1,12 +1,6 @@
 {
   "rewrites": [
-    {
-      "source": "/locale/(.*)",
-      "destination": "/src/app/locale/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/src/app/$1"
-    }
+    { "source": "/:locale(en|ar)/(.*)", "destination": "/src/app/[locale]/$2" },
+    { "source": "/(.*)", "destination": "/src/app/$1" }
   ]
 }
