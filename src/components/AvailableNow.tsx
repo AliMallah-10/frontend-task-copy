@@ -53,13 +53,13 @@ const AvailableNow = () => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="z-0 flex justify-between items-center px-12 mb-6">
-        <h2 className="text-2xl text-white">
+      <div className="z-0 flex justify-between items-center lg:px-12 max-xs:px-2 sm:px-2 mb-6">
+        <h2 className="max-xs:text-sm sm:text-md  md:text-xl lg:text-2xl text-white">
           {t("SectionTitle.WebMainslider")}
         </h2>
 
         <div
-          className={`dotsDiv flex justify-center items-center gap-2 pr-12 ${
+          className={`dotsDiv flex justify-center items-center gap-2 max-xs:pr-2 sm:pr-2 lg:pr-12 ${
             hovered ? "" : "hidden"
           }`}
         >
@@ -121,7 +121,7 @@ const AvailableNow = () => {
                 width={400}
                 height={0}
                 // layout="responsive"
-                quality={100} 
+                quality={100}
               />
               {/* details */}
               <div className="DivCardScale  overflow-hidden">
@@ -129,7 +129,7 @@ const AvailableNow = () => {
                   <div className="flex justify-between items-center">
                     <h3 className="font-bold ">
                       {" "}
-                      {truncateText(t(`OrginalSection.${movie.name}.name`), 15)}
+                      {truncateText(t(`OriginalSection.${movie.name}.name`), 15)}
                     </h3>
                     <div className="flex justify-center items-center gap-2">
                       <span className="bg-transparent border-2 border-white rounded-full p-1 hover:bg-primary hover:border-primary transform transition-transform duration-300 hover:scale-110">
@@ -144,7 +144,7 @@ const AvailableNow = () => {
                     {movie.genres.map((genre, idx) => (
                       <div key={idx}>
                         <span className="text-sm text-gray">
-                          {t(`OrginalSection.${movie.name}.genres.${idx}`)}
+                          {t(`OriginalSection.${movie.name}.genres.${idx}`)}
                         </span>
                         {idx < movie.genres.length - 1 && (
                           <span className="mx-2 h-10 border-l-2 border-green-500"></span>
@@ -155,7 +155,7 @@ const AvailableNow = () => {
                   {/* Movie description */}
                   <p className="text-sm text-gray">
                     {truncateText(
-                      t(`OrginalSection.${movie.name}.description`),
+                      t(`OriginalSection.${movie.name}.description`),
                       80
                     )}
                   </p>

@@ -15,12 +15,11 @@ const ProfileDropdown = () => {
 
   return (
     <div className="relative z-50">
-      <button
+      <UserRound
         onClick={toggleDropdown}
-        className="rounded-full bg-white text-center p-2"
-      >
-        <UserRound color="green" />
-      </button>
+        color="green"
+        className="h-9 w-9 bg-white p-1 rounded-full"
+      />
       <div
         className={`absolute  mt-2 w-40 bg-opacity-65 bg-slate-800 rounded-md shadow-lg transition-[max-height] duration-500 ease-in-out overflow-hidden ${
           isOpen ? "max-h-40" : "max-h-0"

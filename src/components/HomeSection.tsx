@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Crown, Plus } from "lucide-react";
-import { useTranslations, useLocale, useMessages } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
 
 const HomeSection = () => {
@@ -112,8 +112,7 @@ const HomeSection = () => {
                 <div className="absolute inset-0 flex justify-between items-end px-8 pb-10 pr-20 bottom-10">
                   <div className="flex flex-col items-start gap-5">
                     <div className="flex items-center justify-center">
-                      <h1 className="text-4xl">
-                        {/* {movie.name} */}
+                      <h1 className=" text-white max-xs:text-xl sm:text-xl  md:text-2xl lg:text-4xl">
                         {t(`WebMainslider.${movie.name}.name`)}
                       </h1>
                       <span className="mx-5 h-10 border-l-4 border-green-500"></span>
@@ -121,16 +120,15 @@ const HomeSection = () => {
                     </div>
 
                     <div className="flex items-start">
-                      <h2 className="text-white/60 text-xl font-bold">
+                      <h2 className="text-white/60 max-xs:text-md sm:text-md  md:text-xl lg:text-2xl font-bold">
                         {movie.year}
                       </h2>
                       <span className="mx-2 h-8 border-l-2 border-green-500"></span>
-                      <h2 className="text-white/60 text-xl font-bold">
+                      <h2 className="text-white/60 font-bold">
                         <div className="flex justify-start items-start gap-2">
                           {movie.genres.map((genre, idx) => (
                             <div key={idx}>
-                              <span className="text-2xl text-gray">
-                                {/* {genre} */}
+                              <span className="max-xs:text-md sm:text-md md:text-xl lg:text-2xl text-gray">
                                 {t(`WebMainslider.${movie.name}.genres.${idx}`)}
                               </span>
                               {idx < movie.genres.length - 1 && (
@@ -143,18 +141,20 @@ const HomeSection = () => {
                     </div>
                     <h3
                       className={`${
-                        locale === "ar" ? "max-w-[60%] text-2xl" : ""
+                        locale === "ar"
+                          ? "max-w-[60%] max-xs:text-md sm:text-md md:text-xl lg:text-2xl"
+                          : ""
                       }`}
                     >
                       {locale === "ar"
                         ? movie.description
                         : t(`WebMainslider.${movie.name}.name`)}
                     </h3>
-                    <div className="flex items-start gap-3">
-                      <button className="btnSub bg-success text-black text-[15px] font-semibold px-6 py-3 rounded-2xl ">
+                    <div className="flex items-start gap-3 max-xs:flex-col ">
+                      <button className="btnSub bg-success text-black text-[15px] font-semibold lg:px-6 sm:p-2 lg:py-3 rounded-2xl ">
                         {t("Buttons.Subscribe")}
                       </button>
-                      <button className="btnADD flex items-center gap-2  text-white text-[15px]  px-6 py-3 rounded-lg border border-white">
+                      <button className="btnADD flex items-center gap-2  text-white text-[15px]  lg:px-6  sm:p-2 lg:py-3 rounded-lg border border-white">
                         <Plus /> {t("Buttons.favorties")}
                       </button>
                     </div>

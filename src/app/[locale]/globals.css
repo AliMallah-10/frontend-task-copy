@@ -139,7 +139,7 @@ body {
 .swiper-container {
   overflow: visible !important; /* Ensure overflow is visible */
 }
-.SwiperSlide{
+.SwiperSlide {
   /* z-index: 999 !important; */
   box-sizing: border-box;
 }

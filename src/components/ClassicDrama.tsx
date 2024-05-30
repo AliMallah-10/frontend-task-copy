@@ -45,11 +45,13 @@ const MostWatched = () => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="flex justify-between items-center px-12 mb-6">
-        <h2 className="text-2xl text-white">{t("SectionTitle.Classic")}</h2>
+      <div className="flex justify-between items-center lg:px-12 max-xs:px-2 sm:px-2 mb-6">
+        <h2 className="max-xs:text-sm sm:text-md  md:text-xl lg:text-2xl text-white">
+          {t("SectionTitle.Classic")}
+        </h2>
 
         <div
-          className={`dotsDiv flex justify-center items-center gap-2 pr-12 ${
+          className={`dotsDiv flex justify-center items-center max-xs:gap-1 sm:gap-1  lg:gap-2 max-xs:pr-2 sm:pr-2 lg:pr-12 ${
             hovered ? "" : "hidden"
           }`}
         >

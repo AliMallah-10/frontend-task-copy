@@ -36,7 +36,7 @@ const Navbar = () => {
     <div className="relative">
       <SearchBar isVisible={isSearchVisible} onClose={toggleSearch} />
       <nav
-        className={`fixed w-full top-0 z-50 flex items-center justify-between gap-8 py-4 px-8 transition-colors duration-300 ${
+        className={`fixed w-full top-0 z-50 flex items-center justify-between gap-8 py-4 max-xs:px-2 sm:px-2 lg:px-8 transition-colors duration-300 ${
           isScrolled
             ? "bg-slate-900/50 backdrop-blur-md"
             : "bg-gradient-to-b from-secondary to-transparent"
@@ -62,7 +62,7 @@ const Navbar = () => {
           <NavLinks />
         </div>
         {/* Actions side */}
-        <div className="flex items-center justify-center gap-8">
+        <div className="flex items-center justify-center max-xs:gap-2 sm:gap-2 lg:gap-8">
           {/* Search icon */}
           <span onClick={toggleSearch} className="cursor-pointer z-50">
             <Search />

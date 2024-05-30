@@ -7,11 +7,12 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { getLangDir } from "rtl-detect";
 const inter = Inter({ subsets: ["latin"] });
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "1001 - الرئيسية",
   description:
-    "1001 is the home for your favourite series, documentaries and TV shows from Iraq and around the world, featuring thousands of hours of original and exclusive video content.",
+    "1001 is the home for your favorite series, documentaries and TV shows from Iraq and around the world, featuring thousands of hours of original and exclusive video content.",
 };
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -29,6 +30,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locales} dir={direction}>
+    
       <body
         className={`${inter.className} bg-[#010028] text-[#f2f2f2] text-lg  overflow-x-hidden`}
       >
