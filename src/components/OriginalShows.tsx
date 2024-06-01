@@ -13,6 +13,7 @@ import Image from "next/image";
 
 const OriginalShows = () => {
   const t = useTranslations();
+  const [isLoading, setIsLoading] = useState(true);
   const [movies, setMovies] = useState<Movie[]>([]);
   const [activeGroup, setActiveGroup] = useState(0);
   const swiperRef = useRef<SwiperCore | null>(null);
@@ -25,6 +26,7 @@ const OriginalShows = () => {
         const data = await response.json();
         const moviesData = data[4].videos; // Get the first 12 movies
         setMovies(moviesData);
+        setIsLoading(false);
       } catch (error) {
         console.error("Error fetching movies:", error);
       }
@@ -89,59 +91,73 @@ const OriginalShows = () => {
           }}
           className="w-3/4 "
         >
-          {movies.map((movie, index) => (
-            <SwiperSlide key={index} className="SwiperSlide">
-              <div className="relative group transform transition-all duration-700 border-2 border-transparent hover:border-green-500 rounded-lg lg:hover:w-[250%] overflow-hidden ">
-                <div className="absolute top-0 left-0 font-bold text-sm bg-slate-900/60 text-primary px-2 py-1.5 rounded-tl-lg rounded-br-md">
-                  <Crown height={18} />
-                </div>
-                <Image
-                  src={movie.bannerImage}
-                  alt={movie.name}
-                  className="w-full h-80 object-cover rounded-lg lg:group-hover:hidden"
-                  width={400}
-                  height={0}
-                  // layout="responsive"
-                  quality={100}
-                />
-                <Image
-                  src={movie.landscapeImage}
-                  alt={movie.name}
-                  className="w-full h-80 object-cover rounded-lg hidden lg:group-hover:block"
-                  width={400}
-                  height={0}
-                  // layout="responsive"
-                  quality={100}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 overflow-hidden rounded-b-md transition-max-height duration-600 ease-in-out opacity-0 max-h-0 lg:group-hover:max-h-full lg:group-hover:opacity-100 px-5 p-5">
-                    <div className="flex justify-between items-center w-full text-white text-center">
-                      <h3> {movie.name}</h3>
-                      <div className="flex justify-center items-center gap-2">
-                        <span className="bg-transparent border-2 border-white rounded-full p-1 hover:bg-primary hover:border-primary transform transition-transform duration-300 hover:scale-110">
-                          <Plus />
-                        </span>
-                        <span className="bg-transparent border-2 border-white rounded-full p-1 hover:bg-primary hover:border-primary transform transition-transform duration-300 hover:scale-110">
-                          <Play />
-                        </span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
+            {isLoading
+              ? // Render loading animation until data is loaded
+
+                Array.from({ length: 4 }).map((_, index) => (
+                  <div key={index} className="animate-pulse px-2">
+                    <div className="bg-slate-700 rounded-lg h-80"></div>
+                  </div>
+                ))
+              : movies.map((movie, index) => (
+                  <SwiperSlide key={index} className="SwiperSlide">
+                    <div className="relative group transform transition-all duration-700 border-2 border-transparent hover:border-green-500 rounded-lg lg:hover:w-[250%] overflow-hidden ">
+                      <div className="absolute top-0 left-0 font-bold text-sm bg-slate-900/60 text-primary px-2 py-1.5 rounded-tl-lg rounded-br-md">
+                        <Crown height={18} />
+                      </div>
+                      <Image
+                        src={movie.bannerImage}
+                        alt={movie.name}
+                        className="w-full h-80 object-cover rounded-lg lg:group-hover:hidden "
+                        width={400}
+                        height={100}
+                        // layout="responsive"
+                        quality={100}
+                      />
+                      <Image
+                        src={movie.landscapeImage}
+                        alt={movie.name}
+                        className="w-full h-80 object-cover rounded-lg hidden lg:group-hover:block"
+                        width={400}
+                        height={0}
+                        // layout="responsive"
+                        quality={100}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-0 left-0 right-0 overflow-hidden rounded-b-md transition-max-height duration-600 ease-in-out opacity-0 max-h-0 lg:group-hover:max-h-full lg:group-hover:opacity-100 px-5 p-5">
+                          <div className="flex justify-between items-center w-full text-white text-center">
+                            <h3> {movie.name}</h3>
+                            <div className="flex justify-center items-center gap-2">
+                              <span className="bg-transparent border-2 border-white rounded-full p-1 hover:bg-primary hover:border-primary transform transition-transform duration-300 hover:scale-110">
+                                <Plus />
+                              </span>
+                              <span className="bg-transparent border-2 border-white rounded-full p-1 hover:bg-primary hover:border-primary transform transition-transform duration-300 hover:scale-110">
+                                <Play />
+                              </span>
+                            </div>
+                          </div>
+                          <div className="flex justify-start items-start gap-2">
+                            {movie.genres.map((genre, idx) => (
+                              <div key={idx}>
+                                <span className="text-sm text-gray">
+                                  {genre}
+                                </span>
+                                {idx < movie.genres.length - 1 && (
+                                  <span className="mx-3 h-10 border-l-2 border-green-500"></span>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                          <p className="text-sm text-gray">
+                            {movie.description}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                    <div className="flex justify-start items-start gap-2">
-                      {movie.genres.map((genre, idx) => (
-                        <div key={idx}>
-                          <span className="text-sm text-gray">{genre}</span>
-                          {idx < movie.genres.length - 1 && (
-                            <span className="mx-3 h-10 border-l-2 border-green-500"></span>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                    <p className="text-sm text-gray">{movie.description}</p>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
+                  </SwiperSlide>
+                ))}
+          </div>
         </Swiper>
         <button className="hidden button-bot bg-success text-white text-xl  px-6 py-3 font-bold rounded-2xl">
           {t("Buttons.Browse")}

@@ -16,6 +16,7 @@ import Image from "next/image";
 
 const AvailableNow = () => {
   const t = useTranslations();
+  const [isLoading, setIsLoading] = useState(true);
   const [movies, setMovies] = useState<Movie[]>([]);
   const [activeGroup, setActiveGroup] = useState(0);
   const swiperRef = useRef<SwiperCore | null>(null);
@@ -27,6 +28,7 @@ const AvailableNow = () => {
         const data = await response.json();
         const moviesData = data[1].videos; // Get the first 12 movies
         setMovies(moviesData);
+        setIsLoading(false);
       } catch (error) {
         console.error("Error fetching movies:", error);
       }
@@ -108,62 +110,77 @@ const AvailableNow = () => {
         }}
         className="hover:cursor-pointer overflow-visible swiper-container "
       >
-        {movies.map((movie, index) => (
-          <SwiperSlide key={index} className="">
-            <div className="relative group transform transition-transform duration-300 hover:z-50 lg:hover:scale-125 max-h-full lg:hover:-translate-y-16">
-              <div className="absolute top-0 left-0 font-bold text-sm bg-slate-900/60 text-primary px-2 py-1.5 rounded-tl-lg rounded-br-md ">
-                Free
-              </div>
-              <Image
-                src={movie.bannerImage}
-                alt={movie.name}
-                className="w-full h-44 object-cover rounded-lg group-hover:rounded-b-none  border-2  border-transparent lg:group-hover:border-x-primary lg:group-hover:border-t-primary "
-                width={400}
-                height={0}
-                // layout="responsive"
-                quality={100}
-              />
-              {/* details */}
-              <div className="DivCardScale  overflow-hidden">
-                <div className="mt-7 w-full bg-slate-900 text-white  py-2 px-5">
-                  <div className="flex justify-between items-center">
-                    <h3 className="font-bold ">
-                      {" "}
-                      {truncateText(t(`OriginalSection.${movie.name}.name`), 15)}
-                    </h3>
-                    <div className="flex justify-center items-center gap-2">
-                      <span className="bg-transparent border-2 border-white rounded-full p-1 hover:bg-primary hover:border-primary transform transition-transform duration-300 hover:scale-110">
-                        <Plus />
-                      </span>
-                      <span className="bg-transparent border-2 border-white rounded-full p-1 hover:bg-primary hover:border-primary transform transition-transform duration-300 hover:scale-110">
-                        <Play />
-                      </span>
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
+          {isLoading
+            ? // Render loading animation until data is loaded
+
+              Array.from({ length: 5 }).map((_, index) => (
+                <div key={index} className="animate-pulse px-2">
+                  <div className="bg-slate-700 rounded-lg h-44"></div>
+                </div>
+              ))
+            : movies.map((movie, index) => (
+                <SwiperSlide key={index} className="">
+                  <div className="relative group transform transition-transform duration-300 hover:z-50 lg:hover:scale-125 max-h-full lg:hover:-translate-y-16">
+                    <div className="absolute top-0 left-0 font-bold text-sm bg-slate-900/60 text-primary px-2 py-1.5 rounded-tl-lg rounded-br-md ">
+                      Free
+                    </div>
+                    <Image
+                      src={movie.bannerImage}
+                      alt={movie.name}
+                      className="w-full h-44 object-cover rounded-lg group-hover:rounded-b-none  border-2  border-transparent lg:group-hover:border-x-primary lg:group-hover:border-t-primary "
+                      width={400}
+                      height={0}
+                      // layout="responsive"
+                      quality={100}
+                    />
+                    {/* details */}
+                    <div className="DivCardScale  overflow-hidden">
+                      <div className="mt-7 w-full bg-slate-900 text-white  py-2 px-5">
+                        <div className="flex justify-between items-center">
+                          <h3 className="font-bold ">
+                            {" "}
+                            {truncateText(
+                              t(`OriginalSection.${movie.name}.name`),
+                              15
+                            )}
+                          </h3>
+                          <div className="flex justify-center items-center gap-2">
+                            <span className="bg-transparent border-2 border-white rounded-full p-1 hover:bg-primary hover:border-primary transform transition-transform duration-300 hover:scale-110">
+                              <Plus />
+                            </span>
+                            <span className="bg-transparent border-2 border-white rounded-full p-1 hover:bg-primary hover:border-primary transform transition-transform duration-300 hover:scale-110">
+                              <Play />
+                            </span>
+                          </div>
+                        </div>
+                        <div className="flex justify-start items-start gap-2">
+                          {movie.genres.map((genre, idx) => (
+                            <div key={idx}>
+                              <span className="text-sm text-gray">
+                                {t(
+                                  `OriginalSection.${movie.name}.genres.${idx}`
+                                )}
+                              </span>
+                              {idx < movie.genres.length - 1 && (
+                                <span className="mx-2 h-10 border-l-2 border-green-500"></span>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                        {/* Movie description */}
+                        <p className="text-sm text-gray">
+                          {truncateText(
+                            t(`OriginalSection.${movie.name}.description`),
+                            80
+                          )}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex justify-start items-start gap-2">
-                    {movie.genres.map((genre, idx) => (
-                      <div key={idx}>
-                        <span className="text-sm text-gray">
-                          {t(`OriginalSection.${movie.name}.genres.${idx}`)}
-                        </span>
-                        {idx < movie.genres.length - 1 && (
-                          <span className="mx-2 h-10 border-l-2 border-green-500"></span>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                  {/* Movie description */}
-                  <p className="text-sm text-gray">
-                    {truncateText(
-                      t(`OriginalSection.${movie.name}.description`),
-                      80
-                    )}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
+                </SwiperSlide>
+              ))}
+        </div>
       </Swiper>
     </section>
   );
