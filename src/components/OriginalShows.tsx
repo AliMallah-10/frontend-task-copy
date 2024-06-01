@@ -87,34 +87,34 @@ const OriginalShows = () => {
               spaceBetween: 15,
             },
           }}
-          className="w-3/4 orginalSwiper"
+          className="w-3/4 "
         >
           {movies.map((movie, index) => (
-            <SwiperSlide key={index} className="relative">
-              <div className="relative group transform transition-all duration-700 border-2 border-transparent hover:border-green-500 hover:z-30 rounded-lg hover:w-[250%] overflow-hidden ">
+            <SwiperSlide key={index} className="SwiperSlide">
+              <div className="relative group transform transition-all duration-700 border-2 border-transparent hover:border-green-500 rounded-lg lg:hover:w-[250%] overflow-hidden ">
                 <div className="absolute top-0 left-0 font-bold text-sm bg-slate-900/60 text-primary px-2 py-1.5 rounded-tl-lg rounded-br-md">
                   <Crown height={18} />
                 </div>
                 <Image
                   src={movie.bannerImage}
                   alt={movie.name}
-                  className="w-full h-80 object-cover rounded-lg group-hover:hidden"
+                  className="w-full h-80 object-cover rounded-lg lg:group-hover:hidden"
                   width={400}
                   height={0}
                   // layout="responsive"
-                  quality={100} 
+                  quality={100}
                 />
                 <Image
                   src={movie.landscapeImage}
                   alt={movie.name}
-                  className="w-full h-80 object-cover rounded-lg hidden group-hover:block"
+                  className="w-full h-80 object-cover rounded-lg hidden lg:group-hover:block"
                   width={400}
                   height={0}
                   // layout="responsive"
-                  quality={100} 
+                  quality={100}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 overflow-hidden rounded-b-md transition-max-height duration-600 ease-in-out opacity-0 max-h-0 group-hover:max-h-full group-hover:opacity-100 px-5 p-5">
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 overflow-hidden rounded-b-md transition-max-height duration-600 ease-in-out opacity-0 max-h-0 lg:group-hover:max-h-full lg:group-hover:opacity-100 px-5 p-5">
                     <div className="flex justify-between items-center w-full text-white text-center">
                       <h3> {movie.name}</h3>
                       <div className="flex justify-center items-center gap-2">

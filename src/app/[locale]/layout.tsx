@@ -32,7 +32,7 @@ export default async function RootLayout({
     <html lang={locales} dir={direction}>
     
       <body
-        className={`${inter.className} bg-[#010028] text-[#f2f2f2] text-lg  overflow-x-hidden`}
+        className={`${inter.className} bg-[#010028] text-[#f2f2f2] text-lg  overflow-x-hidden `}
       >
         {" "}
         <NextIntlClientProvider messages={messages}>

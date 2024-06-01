@@ -110,14 +110,14 @@ const AvailableNow = () => {
       >
         {movies.map((movie, index) => (
           <SwiperSlide key={index} className="">
-            <div className="relative group transform transition-transform duration-300 hover:z-50 hover:scale-125 max-h-full hover:-translate-y-16">
+            <div className="relative group transform transition-transform duration-300 hover:z-50 lg:hover:scale-125 max-h-full lg:hover:-translate-y-16">
               <div className="absolute top-0 left-0 font-bold text-sm bg-slate-900/60 text-primary px-2 py-1.5 rounded-tl-lg rounded-br-md ">
                 Free
               </div>
               <Image
                 src={movie.bannerImage}
                 alt={movie.name}
-                className="w-full h-44 object-cover rounded-lg group-hover:rounded-b-none  border-2  border-transparent group-hover:border-x-primary group-hover:border-t-primary "
+                className="w-full h-44 object-cover rounded-lg group-hover:rounded-b-none  border-2  border-transparent lg:group-hover:border-x-primary lg:group-hover:border-t-primary "
                 width={400}
                 height={0}
                 // layout="responsive"

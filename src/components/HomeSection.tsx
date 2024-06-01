@@ -52,7 +52,7 @@ const HomeSection = () => {
           <div
             className={`absolute h-1/4 bottom-12 ${
               locale === "ar" ? "left-20" : "right-20"
-            } w-2/5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-4 border p-3 m-0 backdrop-blur-lg bg-white/10 rounded-lg z-20 switchGroup`}
+            } w-2/5 grid grid-cols-1 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-4 border p-3 m-0 backdrop-blur-lg bg-white/10 rounded-lg z-20 switchGroup`}
           >
             {movies.map((video, index) => (
               <div
